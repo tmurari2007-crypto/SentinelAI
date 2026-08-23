@@ -1,0 +1,444 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: #0b1020;
+  color: #e8ecf7;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+}
+
+/* SIDEBAR */
+
+.sidebar {
+  width: 240px;
+  background: #10172a;
+  border-right: 1px solid #202943;
+  padding: 28px 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.subtitle {
+  color: #8993ad;
+  font-size: 13px;
+  margin: 7px 0 35px 36px;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-item {
+  background: transparent;
+  border: none;
+  color: #9da7bd;
+  text-align: left;
+  padding: 13px 15px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.nav-item:hover {
+  background: #19213a;
+  color: white;
+}
+
+.nav-item.active {
+  background: #27365c;
+  color: white;
+}
+
+.sidebar-bottom {
+  margin-top: auto;
+}
+
+.system-status {
+  background: #151e34;
+  padding: 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  color: #b8c2d8;
+}
+
+.status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #35d07f;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+/* MAIN */
+
+.main {
+  flex: 1;
+  padding: 35px 45px;
+  max-width: 1500px;
+  margin: auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.header p {
+  color: #8791aa;
+  margin-top: 8px;
+}
+
+.test-button {
+  background: #6c63ff;
+  color: white;
+  border: none;
+  padding: 13px 20px;
+  border-radius: 9px;
+  font-weight: 600;
+}
+
+.test-button:hover {
+  background: #7b73ff;
+}
+
+/* STATISTICS */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 25px;
+}
+
+.stat-card {
+  background: #121a2e;
+  border: 1px solid #202943;
+  border-radius: 14px;
+  padding: 22px;
+}
+
+.stat-card span {
+  color: #8c96ae;
+  font-size: 13px;
+}
+
+.stat-card strong {
+  display: block;
+  font-size: 32px;
+  margin: 12px 0 5px;
+}
+
+.stat-card small {
+  color: #43d58c;
+}
+
+.danger-card small {
+  color: #ff7777;
+}
+
+/* PANELS */
+
+.panel {
+  background: #121a2e;
+  border: 1px solid #202943;
+  border-radius: 15px;
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+
+.panel-header {
+  padding: 22px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #202943;
+}
+
+.panel-header h2 {
+  margin: 0;
+  font-size: 19px;
+}
+
+.panel-header p {
+  color: #7f8aa4;
+  margin: 6px 0 0;
+  font-size: 13px;
+}
+
+.view-button {
+  background: transparent;
+  border: 1px solid #303b59;
+  color: #c7cee0;
+  padding: 8px 14px;
+  border-radius: 7px;
+}
+
+/* TABLE */
+
+.table-header,
+.table-row {
+  display: grid;
+  grid-template-columns: 2fr 1.4fr 1.5fr 1fr;
+  padding: 17px 25px;
+  align-items: center;
+}
+
+.table-header {
+  color: #737e99;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.table-row {
+  border-top: 1px solid #202943;
+  color: #aeb7ca;
+  font-size: 14px;
+}
+
+.agent-name {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  font-weight: 600;
+}
+
+.agent-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: #242f50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+}
+
+.score-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.score-bar {
+  width: 100px;
+  height: 7px;
+  background: #252e46;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.score-fill {
+  height: 100%;
+  background: #6c63ff;
+  border-radius: 10px;
+}
+
+.badge {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.success {
+  background: #153d2d;
+  color: #51dc93;
+}
+
+.warning {
+  background: #423719;
+  color: #f4c85c;
+}
+
+.failed {
+  background: #441e28;
+  color: #ff6e7d;
+}
+
+/* FAILURES */
+
+.failure-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  padding: 22px;
+}
+
+.failure-card {
+  background: #171f34;
+  border: 1px solid #293451;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.failure-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.warning-icon {
+  font-size: 22px;
+}
+
+.severity {
+  font-size: 11px;
+  padding: 5px 9px;
+  border-radius: 15px;
+}
+
+.critical {
+  background: #4a1e29;
+  color: #ff6f7d;
+}
+
+.high {
+  background: #44351a;
+  color: #f4c85c;
+}
+
+.medium {
+  background: #29314a;
+  color: #aeb8ff;
+}
+
+.failure-card h3 {
+  margin-bottom: 8px;
+}
+
+.failure-card p {
+  color: #8994ac;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.details-button {
+  background: transparent;
+  border: none;
+  color: #8179ff;
+  padding: 0;
+  margin-top: 10px;
+}
+
+/* WORKFLOW */
+
+.how-section {
+  padding: 10px 0 40px;
+}
+
+.how-section h2 {
+  margin-bottom: 25px;
+}
+
+.workflow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #121a2e;
+  border: 1px solid #202943;
+  padding: 25px;
+  border-radius: 15px;
+}
+
+.workflow-step {
+  max-width: 190px;
+}
+
+.step-number {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #6c63ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.workflow-step h3 {
+  font-size: 15px;
+}
+
+.workflow-step p {
+  color: #8994ac;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.workflow-line {
+  height: 1px;
+  background: #303952;
+  width: 50px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .sidebar {
+    width: 190px;
+  }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .failure-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .workflow {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .workflow-line {
+    width: 1px;
+    height: 30px;
+  }
+}
+/* Evaluation tab */
+.evaluation-empty {
+  padding: 40px 25px;
+  text-align: center;
+  color: #aab3c8;
+}
+
+.evaluation-empty h3 {
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.evaluation-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 10px;
+}
