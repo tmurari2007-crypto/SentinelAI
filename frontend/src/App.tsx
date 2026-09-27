@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 
-const API_URL = "https://sentinelai-bflk.onrender.com";
+const API_URL = "https://sentinelai-backend-o3o7.onrender.com";
 
 interface Agent {
   name: string;
@@ -74,22 +74,18 @@ function App() {
   // =========================================================
 
   const loadAgents = async () => {
-  try {
-    const response = await fetch(`${API_URL}/agents`);
+    try {
+      const response = await fetch(`${API_URL}/agents`);
 
-    if (!response.ok) {
-      throw new Error("Could not load agents");
-    }
+      if (!response.ok) {
+        throw new Error("Could not load agents");
+      }
 
-    const data = await response.json();
+      const data = await response.json();
 
-    // Backend returns:
-    // { status: "success", agents: [...] }
+      const agentList = data.agents || [];
 
-    const agentList = data.agents || [];
-
-    const apiAgents: Agent[] = agentList.map(
-      (agent: any) => ({
+      const apiAgents: Agent[] = agentList.map((agent: any) => ({
         name:
           agent.agent_name ||
           agent.name ||
@@ -104,18 +100,13 @@ function App() {
         status:
           agent.status ||
           "Unknown",
-      })
-    );
+      }));
 
-    setAgents(apiAgents);
-
-  } catch (error) {
-    console.error(
-      "Could not load agents:",
-      error
-    );
-  }
-};
+      setAgents(apiAgents);
+    } catch (error) {
+      console.error("Could not load agents:", error);
+    }
+  };
 
   // Load agents whenever the application starts
   useEffect(() => {
@@ -210,8 +201,9 @@ function App() {
 
       // Get the actual stored data from MongoDB
       await loadAgents();
-
     } catch (error) {
+      console.error("Evaluation error:", error);
+
       setEvaluationResult({
         agent_name: agentName,
         score: 0,
@@ -342,8 +334,6 @@ function App() {
             </p>
           </div>
 
-          {/* Test button ONLY on Evaluations */}
-
           {activeTab === "Evaluations" &&
             !showTestForm && (
               <button
@@ -444,14 +434,12 @@ function App() {
                       <div className="score-container">
 
                         <div className="score-bar">
-
                           <div
                             className="score-fill"
                             style={{
                               width: `${agent.score}%`,
                             }}
                           ></div>
-
                         </div>
 
                         <b>{agent.score}%</b>
@@ -964,8 +952,7 @@ function App() {
                       </h4>
 
                       {!evaluationResult.issues ||
-                      evaluationResult.issues
-                        .length === 0 ? (
+                      evaluationResult.issues.length === 0 ? (
 
                         <p>
                           No reliability
@@ -977,13 +964,8 @@ function App() {
                         <ul>
 
                           {evaluationResult.issues.map(
-                            (
-                              issue,
-                              index
-                            ) => (
-                              <li
-                                key={index}
-                              >
+                            (issue, index) => (
+                              <li key={index}>
                                 ⚠️ {issue}
                               </li>
                             )
