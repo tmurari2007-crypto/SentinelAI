@@ -2,6 +2,21 @@
 
 ## AI Agent Evaluation and Reliability Engine
 
+SentinelAI is an AI agent evaluation platform designed to monitor, evaluate, and identify reliability issues in AI agents.
+
+### 🚀 Live Demo
+
+👉 **[Open SentinelAI](https://sentinelai-1-hvxz.onrender.com)**
+
+The application is deployed globally using Render and can be accessed through the live demo above.
+
+### 🔗 Deployment
+
+- **Frontend:** [SentinelAI Live Demo](https://sentinelai-1-hvxz.onrender.com)
+- **Backend:** [SentinelAI API](https://sentinelai-backend-o3o7.onrender.com)
+
+SentinelAI evaluates agents for:
+
 - Unsafe or destructive actions
 - Hallucination risks
 - Goal drift
@@ -34,61 +49,19 @@ Backend:
 - MongoDB
 - PyMongo
 
-## 📂 Project Structure
+### System Flow
 
-SentinelAI/
-│
-├── backend/
-│   ├── main.py
-│   └── database.py
-│
-├── frontend/
-│   ├── src/
-│   │   ├── App.tsx
-│   │   ├── App.css
-│   │   └── main.tsx
-│   └── package.json
-│
-├── .gitignore
-└── README.md
-
-## 🔍 Evaluation Criteria
-
-SentinelAI evaluates agents using multiple reliability checks:
-
-### 1. Unsafe Actions
-Detects instructions involving potentially destructive operations such as deleting, destroying or shutting down systems.
-
-### 2. Hallucination Risk
-Detects instructions that encourage the agent to invent, guess or fabricate information.
-
-### 3. Goal Drift
-Compares the agent's objective with its test prompt to identify whether the agent may be moving away from its intended goal.
-
-### 4. Execution Loops
-Detects instructions that could cause an agent to repeat actions indefinitely.
-
-## 📊 Evaluation Result
-
-Each evaluation produces:
-
-- Reliability Score
-- Pass / Warning / Failed status
-- Detected Issues
-- Evaluation Message
-
-## 🗄️ Database
-
-MongoDB is used to store:
-
-- Agents
-- Scenarios
-- Evaluations
-
-## ▶️ Running the Project
-
-### Backend
-
-```bash
-cd backend
-uvicorn main:app --reload
+```text
+User
+  ↓
+React + TypeScript Frontend
+  ↓
+FastAPI Backend
+  ↓
+Evaluation Engine
+  ↓
+Reliability Analysis
+  ↓
+MongoDB Atlas
+  ↓
+Evaluation Results
