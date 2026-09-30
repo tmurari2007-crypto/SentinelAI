@@ -6,7 +6,7 @@ SentinelAI is an AI agent evaluation platform designed to monitor, evaluate, and
 
 ### 🚀 Live Demo
 
-* **Frontend Application:** [Open SentinelAI](https://sentinelai-1-hvxz.onrender.com)
+* **Frontend Application:** [Open SentinelAI](https://sentinelai-1-hvzx.onrender.com)
 * **Backend API:** [Open SentinelAI Backend](https://sentinelai-backend-o3o7.onrender.com)
 
 Anyone with these public URLs can access the deployed services, subject to their availability and any access restrictions. To use SentinelAI, start with the frontend application.
